@@ -139,9 +139,19 @@ note('command');
     my $missing = File::Spec->catfile( File::Basename::dirname( Cwd::abs_path __FILE__ ), 'no-such-command' );
     @responses = ( Local::HTTP::Mock->ok );
     ( $rc, $stderr, $urls ) = main( q{--}, $missing );
-    is( $rc, 127, 'returns 127 if the command cannot be run' );
-    like( $stderr,    qr{\QCannot run $missing:\E},                     '... prints the reason' );
-    like( $urls->[0], qr{\A\Q$url\E[?]status=down&msg=Cannot%20run%20}, '... sends down' );
+    if ( $^O eq 'MSWin32' ) {
+
+        # On Windows, system() does not return -1 for a missing command,
+        # the command is reported as exited with 255 instead.
+        is( $rc, 255, 'returns 255 if the command cannot be run' );
+        like( $stderr,    qr{\Qexited with 255\E},                                       '... prints the reason' );
+        like( $urls->[0], qr{\A\Q$url\E[?]status=down&msg=[^&]+%20exited%20with%20255&}, '... sends down' );
+    }
+    else {
+        is( $rc, 127, 'returns 127 if the command cannot be run' );
+        like( $stderr,    qr{\QCannot run $missing:\E},                     '... prints the reason' );
+        like( $urls->[0], qr{\A\Q$url\E[?]status=down&msg=Cannot%20run%20}, '... sends down' );
+    }
 
   SKIP: {
         skip 'signals are not supported on Windows', 2 if $^O eq 'MSWin32';

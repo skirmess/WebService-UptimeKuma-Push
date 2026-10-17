@@ -254,6 +254,9 @@ killed by a signal, and 2 if invalid arguments are given. A failure to send
 the heartbeat is reported on standard error but does not change the exit
 status.
 
+On Windows, Perl cannot distinguish a command that cannot be run from a
+command that exits with 255. In that case B<kuma-push> exits with 255.
+
 =head1 EXAMPLES
 
 =head2 Example 1 Send an up heartbeat
