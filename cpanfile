@@ -1,4 +1,6 @@
 requires 'Carp';
+requires 'File::Basename';
+requires 'Getopt::Long';
 requires 'HTTP::Tiny', '0.025';
 requires 'JSON::PP';
 requires 'Scalar::Util';
@@ -17,7 +19,6 @@ on configure => sub {
 on test => sub {
     requires 'Cwd';
     requires 'Exporter';
-    requires 'File::Basename';
     requires 'File::Spec';
     requires 'Test::More', '0.88';
     requires 'lib';

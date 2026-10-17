@@ -24,10 +24,11 @@ use warnings;
 
 use Test::More 0.88;
 
-use lib qw(lib);
+use lib qw(lib .);
 
 my @modules = qw(
   WebService::UptimeKuma::Push
+  bin/kuma-push
 );
 
 plan tests => scalar @modules;
