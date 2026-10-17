@@ -20,7 +20,7 @@ use 5.010;
 use strict;
 use warnings;
 
-our $VERSION = '0.001';
+our $VERSION = '0.002';
 
 package WebService::UptimeKuma::Push::App;
 
@@ -188,7 +188,7 @@ kuma-push - update an Uptime Kuma push monitor
 
 =head1 VERSION
 
-Version 0.001
+Version 0.002
 
 =head1 SYNOPSIS
 

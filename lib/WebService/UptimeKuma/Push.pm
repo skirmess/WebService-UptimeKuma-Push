@@ -20,7 +20,7 @@ use warnings;
 
 package WebService::UptimeKuma::Push;
 
-our $VERSION = '0.001';
+our $VERSION = '0.002';
 
 use Carp             ();
 use HTTP::Tiny 0.025 ();
@@ -309,7 +309,7 @@ WebService::UptimeKuma::Push - update Uptime Kuma push monitors
 
 =head1 VERSION
 
-Version 0.001
+Version 0.002
 
 =head1 SYNOPSIS
 

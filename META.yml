@@ -41,4 +41,4 @@ resources:
   bugtracker: https://github.com/skirmess/WebService-UptimeKuma-Push/issues
   homepage: https://github.com/skirmess/WebService-UptimeKuma-Push
   repository: https://github.com/skirmess/WebService-UptimeKuma-Push.git
-version: '0.001'
+version: '0.002'

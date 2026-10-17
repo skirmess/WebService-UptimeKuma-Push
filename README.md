@@ -4,7 +4,7 @@ WebService::UptimeKuma::Push - update Uptime Kuma push monitors
 
 # VERSION
 
-Version 0.001
+Version 0.002
 
 # SYNOPSIS
 
