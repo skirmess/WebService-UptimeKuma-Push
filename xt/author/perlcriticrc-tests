@@ -1,0 +1,8 @@
+[ControlStructures::ProhibitPostfixControls]
+flowcontrol = die skip
+[-RegularExpressions::RequireDotMatchAnything]
+[-RegularExpressions::RequireExtendedFormatting]
+[-RegularExpressions::RequireLineBoundaryMatching]
+[-Subroutines::ProtectPrivateSubs]
+[-ValuesAndExpressions::ProhibitEscapedCharacters]
+[-ValuesAndExpressions::RequireInterpolationOfMetachars]
